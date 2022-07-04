@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-peso_por_grano = 0.02
+peso_por_grano = 0.02/1000000
 padding = {
     "casilla": 2,
     "unit": 20,
@@ -8,8 +8,8 @@ padding = {
 }
 msg = {
     "unit": "granos",
-    "weight": "gramos",
-    "t_weight": "toneladas",
+    "weight": "toneladas",
+    "t_weight": "megatoneladas",
 }
 
 
@@ -47,7 +47,7 @@ def build_content():
 
     result = {
         "total_number": granos_contabilizados,
-        "total_weight": peso_por_grano * granos_contabilizados,
+        "total_weight": ((peso_por_grano * granos_contabilizados)/1000000),
         "content": content
     }
 
